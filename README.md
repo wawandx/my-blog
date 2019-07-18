@@ -11,7 +11,7 @@
 </h1>
 
 ## LIVE DEMO
-<a href="https://thirsty-newton-99b747.netlify.com/">
+<a href="https://thirsty-newton-99b747.netlify.com/" target="_blank">
   LIVE DEMO
 </a>
 
