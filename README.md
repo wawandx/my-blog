@@ -13,6 +13,6 @@
 
 [My Personal Blog](https://xenodochial-brahmagupta-f01f9d.netlify.com/)
 
-## Create a Gatsby site.##
+## Create a Gatsby site.
 
 + [Gatsby](https://www.gatsbyjs.org/)
