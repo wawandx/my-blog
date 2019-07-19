@@ -1,11 +1,12 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Header from "../components/Header"
 import Navbar from "../components/Navbar"
 import "../../assets/fonts.css"
 import "../../assets/normalize.css"
-import Card from "../components/Card";
-import Footer from "../components/Footer";
+import Card from "../components/Card"
+import Footer from "../components/Footer"
+import {Helmet} from "react-helmet";
 
 function getRandomColor() {
   var o = Math.round, r = Math.random, s = 255;
@@ -24,6 +25,10 @@ function Layout({ data }) {
   
   return (
     <div style={styles.container}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Rachmad Kurniawan</title>
+      </Helmet>
       <Navbar />
       <div style={styles.content}>
         <Header />
