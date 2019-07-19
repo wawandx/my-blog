@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'My-Blog',
-    description: 'This is my cool blog.'
+    title: 'Rachmad Kurniawan',
+    description: 'My personal blogs.'
   },
   plugins: [
     `gatsby-transformer-remark`,
