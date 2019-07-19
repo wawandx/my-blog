@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar"
 import "../../assets/fonts.css"
 import "../../assets/normalize.css"
 import Card from "../components/Card";
+import Footer from "../components/Footer";
 
 function getRandomColor() {
   var o = Math.round, r = Math.random, s = 255;
@@ -15,12 +16,11 @@ function getRandomColor() {
       transparant: `${rgba},0.4)`
     }
   )
-  
-  ;
 }
 
-function Layout({data}) {
-  const { edges } = data.allMarkdownRemark
+function Layout({ data }) {
+  const { edges } = data.HomePageQuery
+  const tags = data.TagsPageQuery.edges
   
   return (
     <div style={styles.container}>
@@ -32,6 +32,7 @@ function Layout({data}) {
             const { frontmatter } = edge.node
             return (
               <Card 
+                key= {frontmatter.path}
                 backgroundColor={getRandomColor()} 
                 path={frontmatter.path} 
                 title={frontmatter.title}
@@ -40,12 +41,8 @@ function Layout({data}) {
             )
           })}
         </div>
-        <div>
-          <Link to='/tags'>
-            Browse by Tag
-          </Link>
-        </div>
       </div>
+      <Footer link={tags} />
     </div>
   )
 }
@@ -73,30 +70,32 @@ const styles = {
 }
 
 export const query = graphql`
-  query HomePageQuery {
-    allMarkdownRemark(
-      sort: {order: DESC, fields: [frontmatter___date]}
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            path
-            date
-          }
-        }
-      }
-    }
+  query Name {
+    HomePageQuery: allMarkdownRemark(
+                    sort: {order: DESC, fields: [frontmatter___date]}
+                  ) {
+                    edges {
+                      node {
+                        frontmatter {
+                          title
+                          path
+                          date
+                        }
+                      }
+                    }
+                  }
+    TagsPageQuery: allMarkdownRemark(
+                    sort: {order: ASC, fields: [frontmatter___date]}
+                  ) {
+                    edges {
+                      node{
+                        frontmatter {
+                          tags
+                        }
+                      }
+                    }
+                  }
   }
 `
 
 export default Layout
-
-{/* <div 
-  key={frontmatter.path}
-  style={styles.list}
->
-  <Link to={frontmatter.path}>
-    {frontmatter.title}
-  </Link>
-</div> */}

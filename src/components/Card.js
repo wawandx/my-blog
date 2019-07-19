@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 
 function Card(props) {
   return (
@@ -7,7 +7,7 @@ function Card(props) {
       <div style={styles().cardOne}>
         <div style={styles().date}>{props.date}</div>
         <div style={styles().title}>{props.title}</div>
-        <div style={styles(props.backgroundColor.color).divButton}><Link to={props.path}>View More</Link></div>
+        <Link style={styles(props.backgroundColor.color).divButton} to={props.path}>View More</Link>
       </div>
       <div style={styles().cardTwo}>
         <img style={styles().image} src={require('../../assets/images/React.png')} />
@@ -58,7 +58,8 @@ const styles = (color = null, transparant = null) => {
       borderRadius: '5px',
       textAlign: 'center',
       paddingTop: '8px',
-      boxShadow: '1px 2px 10px #8b8b8c'
+      boxShadow: '1px 2px 10px #8b8b8c',
+      textDecoration: 'none'
     },
     cardTwo: {
       margin: '20px',
