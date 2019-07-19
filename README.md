@@ -10,11 +10,6 @@
   </a>
 </h1>
 
-## LIVE DEMO
-<a href="https://thirsty-newton-99b747.netlify.com/" target="_blank">
-  LIVE DEMO
-</a>
-
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
