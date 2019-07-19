@@ -15,4 +15,4 @@
 
 ## Create a Gatsby site.##
 
-+[Gatsby](https://www.gatsbyjs.org/)
++ [Gatsby](https://www.gatsbyjs.org/)
